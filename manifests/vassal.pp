@@ -1,4 +1,4 @@
-class uwsgi::vassal ($project, $slug, $port){
+define uwsgi::vassal ($project, $slug, $port){
   file {"$project.ini":
     path    => "/etc/uwsgi/apps-enabled/$project.ini",
     owner   => root,
