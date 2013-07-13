@@ -5,6 +5,7 @@ define uwsgi::vassal ($project, $slug, $port){
     group   => root,
     mode    => '640',
     content => template('uwsgi.erb'),
+    ensure  => 'present',
     require => Package['uwsgi'],
   }
 }
