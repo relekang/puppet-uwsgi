@@ -5,8 +5,8 @@ define uwsgi::vassal (
   $port,
   $master=true,
   $vacuum=true,
-  $single-interpreter=true,
-  $enable-threads=true
+  $single_interpreter=true,
+  $enable_threads=true
 ){
   file {"$project.ini":
     path    => "/etc/uwsgi/apps-enabled/$project.ini",
