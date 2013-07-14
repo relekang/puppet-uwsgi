@@ -2,6 +2,7 @@ define uwsgi::vassal (
   $project,
   $chdir,
   $virtualenv,
+  $wsgi_file,
   $port,
   $master=true,
   $vacuum=true,
