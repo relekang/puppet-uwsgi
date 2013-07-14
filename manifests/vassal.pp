@@ -4,7 +4,7 @@ define uwsgi::vassal ($project, $slug, $port){
     owner   => root,
     group   => root,
     mode    => '640',
-    content => template('uwsgi.erb'),
+    content => template("${module_name}/vassal.ini.erb"),
     ensure  => 'present',
     require => Package['uwsgi'],
   }
