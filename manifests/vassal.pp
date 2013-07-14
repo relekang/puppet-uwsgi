@@ -1,4 +1,13 @@
-define uwsgi::vassal ($project, $slug, $port){
+define uwsgi::vassal (
+  $project,
+  $chdir,
+  $virtualenv,
+  $port,
+  $master=true,
+  $vacuum=true,
+  $single-interpreter=true,
+  $enable-threads=true
+){
   file {"$project.ini":
     path    => "/etc/uwsgi/apps-enabled/$project.ini",
     owner   => root,

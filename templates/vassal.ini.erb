@@ -1,10 +1,10 @@
 [uwsgi]
-chdir=/home/web/<%= project %>/
-wsgi-file = /home/web/<%= project %>/<%= slug %>/wsgi.py
-virtualenv = /home/web/<%= project %>/venv
-master=True
-vacuum=True
+chdir=<%= chdir %>
+wsgi-file=<%= wsgi_file %>
+virtualenv=<%= virtualenv%>
 socket=127.0.0.1:<%= port %>
-daemonize=/var/log/uwsgi/<%= project %>.log
-single-interpreter = true
-enable-threads = true
+daemonize=/var/log/uwsgi/<%= title %>.log
+master=<%= master %>
+vacuum=<%= vacuum %>
+single-interpreter = <%= single_interpreter %>
+enable-threads = <%= enable_threads %>
