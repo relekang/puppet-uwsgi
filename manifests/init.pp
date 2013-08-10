@@ -19,8 +19,4 @@ class uwsgi {
         group  => root,
         mode   => '0755',
     }
-
-    class {'uwsgi::config':
-        require => Package['uwsgi']
-    }
 }
