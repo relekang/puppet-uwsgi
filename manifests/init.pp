@@ -4,7 +4,8 @@ class uwsgi {
     include uwsgi::service
 
     package {'uwsgi':
-        ensure => installed,
+        ensure   => installed,
+        provider => 'pip'
     }
 
     file {'/etc/uwsgi/apps-enabled':
