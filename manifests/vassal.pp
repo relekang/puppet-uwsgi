@@ -1,3 +1,6 @@
+# == Class uwsgi::vassal
+# Defines settings for a uwsgi vassal
+
 define uwsgi::vassal (
   $project,
   $chdir,

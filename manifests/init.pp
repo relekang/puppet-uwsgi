@@ -1,3 +1,5 @@
+# == Class: uwsgi
+
 class uwsgi {
     include uwsgi::service
 

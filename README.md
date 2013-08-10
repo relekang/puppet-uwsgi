@@ -1,2 +1,2 @@
 # puppet-uwsgi
-Puppet module for managing uwsgi
+Puppet module for managing uwsgi in emperor mode
