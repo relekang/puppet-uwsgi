@@ -7,7 +7,11 @@ class uwsgi {
         ensure => installed,
     }
 
-    class {'uwsgi::config': 
+    file {'/etc/uwsgi/apps-enabled':
+        ensure => 'directory'
+    }
+
+    class {'uwsgi::config':
         require => Package['uwsgi']
     }
 }
