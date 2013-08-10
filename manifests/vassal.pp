@@ -12,13 +12,13 @@ define uwsgi::vassal (
   $single_interpreter=true,
   $enable_threads=true
 ){
-  file {"$project.ini":
-    path    => "/etc/uwsgi/apps-enabled/$project.ini",
+  file {"${project}.ini":
+    ensure  => 'present',
+    path    => "/etc/uwsgi/apps-enabled/${project}.ini",
     owner   => root,
     group   => root,
-    mode    => '640',
+    mode    => '0640',
     content => template("${module_name}/vassal.ini.erb"),
-    ensure  => 'present',
     require => Package['uwsgi'],
   }
 }
