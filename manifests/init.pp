@@ -3,13 +3,15 @@
 class uwsgi {
     include uwsgi::service
 
-    package {'uwsgi':
+    package { 'uwsgi':
         ensure   => installed,
-        provider => 'pip'
+        provider => 'pip',
+        require  => Class['python']
     }
 
-    file {'/etc/uwsgi/apps-enabled':
-        ensure => 'directory'
+    file { ['/etc/uwsgi', '/etc/uwsgi/apps-enabled']:
+        ensure  => 'directory',
+        require => Package['uwsgi']
     }
 
     file {'/etc/init.d/uwsgi':
