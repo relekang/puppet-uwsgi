@@ -7,6 +7,7 @@ define uwsgi::vassal (
   $virtualenv,
   $wsgi_file,
   $port,
+  $processes=1,
   $master=true,
   $vacuum=true,
   $single_interpreter=true,
