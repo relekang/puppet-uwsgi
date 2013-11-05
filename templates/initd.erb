@@ -4,13 +4,13 @@
 
  daemon=/usr/local/bin/uwsgi
  pid=/var/run/uwsgi.pid
- args="--gid web --logdate --emperor /etc/uwsgi/apps-enabled/ --logto  /var/log/uwsgi/main.log"
+ args="--uid web --logdate --die-on-term --emperor /etc/uwsgi/apps-enabled/ --logto  /var/log/uwsgi/main.log --pidfile $pid"
 
  # Carry out specific functions when asked to by the system
  case "$1" in
      start)
         echo "Starting uwsgi"
-        start-stop-daemon -p $pid --start --exec $daemon -- $args
+        start-stop-daemon -p $pid --start -b --exec $daemon -- $args
         ;;
      stop)
         echo "Stopping script uwsgi"
