@@ -13,6 +13,11 @@ class uwsgi {
         require => Package['uwsgi']
     }
 
+    file { '/var/log/uwsgi':
+        ensure  => 'directory',
+        require => Package['uwsgi']
+    }
+
     file {'/etc/init.d/uwsgi':
         ensure  => 'present',
         content => template("${module_name}/initd.erb"),
