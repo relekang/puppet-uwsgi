@@ -20,7 +20,5 @@ define uwsgi::vassal (
     group   => root,
     mode    => '0640',
     content => template("${module_name}/vassal.ini.erb"),
-    require => Package['uwsgi'],
-    notify  => Service['uwsgi']
   }
 }
