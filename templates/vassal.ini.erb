@@ -1,11 +1,11 @@
 [uwsgi]
-chdir=<%= chdir %>
-wsgi-file=<%= wsgi_file %>
-virtualenv=<%= virtualenv %>
-socket=127.0.0.1:<%= port %>
-daemonize=/var/log/uwsgi/<%= project %>.log
-processes=<%= processes %>
-master=<%= master %>
-vacuum=<%= vacuum %>
-single-interpreter = <%= single_interpreter %>
-enable-threads = <%= enable_threads %>
+chdir=<%= @chdir %>
+wsgi-file=<%= @wsgi_file %>
+virtualenv=<%= @virtualenv %>
+socket=127.0.0.1:<%= @port %>
+daemonize=/var/log/uwsgi/<%= @project %>.log
+processes=<%= @processes %>
+master=<%= @master %>
+vacuum=<%= @vacuum %>
+single-interpreter = <%= @single_interpreter %>
+enable-threads = <%= @enable_threads %>
