@@ -6,7 +6,6 @@ class uwsgi {
     package { 'uwsgi':
         ensure   => installed,
         provider => 'pip',
-        require  => Class['python']
     }
 
     file { ['/etc/uwsgi', '/etc/uwsgi/apps-enabled']:
@@ -15,10 +14,11 @@ class uwsgi {
     }
 
     file {'/etc/init.d/uwsgi':
-        ensure => 'present',
-        source => "puppet:///modules/${module_name}/files/initd.conf",
-        owner  => root,
-        group  => root,
-        mode   => '0755',
+        ensure  => 'present',
+        content => template("${module_name}/initd.erb"),
+        owner   => root,
+        group   => root,
+        mode    => '0755',
+        require => Package['uwsgi']
     }
 }
