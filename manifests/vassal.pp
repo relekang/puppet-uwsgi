@@ -2,7 +2,6 @@
 # Defines settings for a uwsgi vassal
 
 define uwsgi::vassal (
-  $project,
   $chdir,
   $virtualenv,
   $wsgi_file,
@@ -13,9 +12,9 @@ define uwsgi::vassal (
   $single_interpreter=true,
   $enable_threads=true
 ){
-  file {"${project}.ini":
+  file {"${title}.ini":
     ensure  => 'present',
-    path    => "/etc/uwsgi/apps-enabled/${project}.ini",
+    path    => "/etc/uwsgi/apps-enabled/${title}.ini",
     owner   => root,
     group   => root,
     mode    => '0640',
